@@ -27,7 +27,14 @@ const UIModalDetail = props => {
               }
             }}
             style={styles.statusBtn}>
-            <Text style={styles.statusBtnText}>
+            <Text
+              style={[
+                styles.statusBtnText,
+                {
+                  color:
+                    infor.isDone == '0' ? colors.primaryColor : 'limegreen',
+                },
+              ]}>
               {infor.isDone == '0' ? 'Chưa xong' : 'Đã xong'}
             </Text>
             <CheckBox
@@ -97,7 +104,6 @@ const styles = StyleSheet.create({
     marginEnd: 5,
   },
   statusBtnText: {
-    color: infor.isDone == '0' ? colors.primaryColor : 'limegreen',
     fontSize: 15,
     flex: 1,
     textAlign: 'center',

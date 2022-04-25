@@ -194,7 +194,11 @@ const HomeScreen = props => {
         keyExtractor={item => item.id}
         renderItem={({item, index}) => {
           return (
-            <View style={styles.itemView}>
+            <View
+              style={[
+                styles.itemView,
+                {marginBottom: index + 1 == todoList.length ? 100 : null},
+              ]}>
               <TouchableOpacity
                 onPress={() => alert('Giữ để hiển thị chi tiết')}
                 onLongPress={() => {
@@ -297,7 +301,6 @@ const styles = StyleSheet.create({
     elevation: 10,
     backgroundColor: 'white',
     margin: 10,
-    marginBottom: index + 1 == todoList.length ? 100 : null,
     borderRadius: 10,
   },
   holdBtn: {
